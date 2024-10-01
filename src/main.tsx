@@ -34,7 +34,7 @@ const router = createBrowserRouter([
     //error parsing later too 
   },
   {
-    path: "AgentDescriptionScreen/:Agent",
+    path: "Agents/:Agent",
     element: <AgentDescription />,
   },
 
@@ -45,3 +45,5 @@ DOMroot.render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
+//strictmode causes page to render twice
+//https://stackoverflow.com/questions/61254372/my-react-component-is-rendering-twice-because-of-strict-mode
