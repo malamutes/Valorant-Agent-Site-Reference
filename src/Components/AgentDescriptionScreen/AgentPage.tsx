@@ -1,10 +1,10 @@
 import { Form, useLocation } from "react-router-dom";
 import { AgentDescriptionDict } from "../../Data/AgentDescriptionData";
-import AgentNameDescRole from "./AgentNameDescRole";
-import AgentRoleIconBox from "./AgentRoleIconBox";
-import { RoleIconBoxInfo } from "./AgentRoleIconBox";
-import { NameDescRoleData } from "./AgentNameDescRole";
-import AgentAbilities from "./AgentAbilities";
+import AgentNameDescRole from "./AgentDescription/AgentNameDescRole";
+import AgentRoleIconBox from "./AgentDescription/AgentRoleIconBox";
+import { RoleIconBoxInfo } from "./AgentDescription/AgentRoleIconBox";
+import { NameDescRoleData } from "./AgentDescription/AgentNameDescRole";
+import AgentAbilities from "./AgentAbilities/AgentAbilities";
 
 //getting pathname
 
@@ -50,5 +50,5 @@ export default function AgentPage() {
 
     const AgentNameDescRoleComponent = AgentNameDescRole(AgentNameDescRoleData);
 
-    return <div>{AgentAbilities()}</div>;
+    return <div>{AgentNameDescRoleComponent}</div>;
 }   

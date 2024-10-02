@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
-import AgentDescription from './Components/AgentDescriptionScreen/AgentDesc.tsx'
+import AgentPage from './Components/AgentDescriptionScreen/AgentPage.tsx'
 import 'bootstrap/dist/css/bootstrap.css'
 
 //DOM STUFF
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
   },
   {
     path: "Agents/:Agent",
-    element: <AgentDescription />,
+    element: <AgentPage />,
   },
 
 ]);
