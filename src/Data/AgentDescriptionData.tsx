@@ -31,7 +31,7 @@ const AgentDescriptionDict: { [key: string]: AgentDescription } = {
             {
                 AbilityIcon: "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data/d7e00a4ad8a1a01b2edcb9fc1193d05e4e50248f-128x128.png?auto=format&fit=crop&q=80&h=64&w=64&crop=center",
                 AbilityName: "INCENDIARY",
-                AbilityUrl: `https://example.com/incendiary.mp4`, // Replace with actual URL
+                AbilityUrl: `https://cmsassets.rgpub.io/sanity/files/dsfx7636/game_data/9df59d490062acceb7c6ca32a3650b55718381f7.mp4`, // Replace with actual URL
                 AbilityDescription: `EQUIP an incendiary grenade launcher. 
                 FIRE to launch a grenade that detonates as it comes to a rest on the floor, 
                 creating a lingering fire zone that damages players within the zone.`
@@ -39,7 +39,7 @@ const AgentDescriptionDict: { [key: string]: AgentDescription } = {
             {
                 AbilityIcon: "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data/5325b2340045a32d919d467ce3b09c3725de73ea-126x126.png?auto=format&fit=crop&q=80&h=64&w=64&crop=center",
                 AbilityName: "SKY SMOKE",
-                AbilityUrl: `https://example.com/sky_smoke.mp4`, // Replace with actual URL
+                AbilityUrl: `https://cmsassets.rgpub.io/sanity/files/dsfx7636/game_data/8e0b72295747346b60c354765944f5233fb208f2.mp4`, // Replace with actual URL
                 AbilityDescription: `EQUIP a tactical map. 
                 FIRE to set locations where Brimstone's smoke clouds will land. ALT FIRE to confirm, 
                 launching long-lasting smoke clouds that block vision in the selected area.`
@@ -47,7 +47,7 @@ const AgentDescriptionDict: { [key: string]: AgentDescription } = {
             {
                 AbilityIcon: "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data/f6c1e1c587dbfe97a4185a47326ce45c42620583-128x128.png?auto=format&fit=crop&q=80&h=64&w=64&crop=center",
                 AbilityName: "STIM BEACON",
-                AbilityUrl: `https://example.com/stim_beacon.mp4`, // Replace with actual URL
+                AbilityUrl: `https://cmsassets.rgpub.io/sanity/files/dsfx7636/game_data/da2d65e4abc2129e284cf5248fd70925f093a0b3.mp4`, // Replace with actual URL
                 AbilityDescription: `EQUIP a stim beacon. 
                 FIRE to toss the stim beacon in front of Brimstone. Upon landing, 
                 the stim beacon will create a field that grants players RapidFire.`
@@ -55,7 +55,7 @@ const AgentDescriptionDict: { [key: string]: AgentDescription } = {
             {
                 AbilityIcon: "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data/8cfa836d1d19356685e42c13054f9f5bc8e9e029-128x128.png?auto=format&fit=crop&q=80&h=64&w=64&crop=center",
                 AbilityName: "ORBITAL STRIKE",
-                AbilityUrl: `https://example.com/orbital_strike.mp4`, // Replace with actual URL
+                AbilityUrl: `https://cmsassets.rgpub.io/sanity/files/dsfx7636/game_data/ccd8e6c574b7017a2681e5d37c744f5a654327e3.mp4`, // Replace with actual URL
                 AbilityDescription: `EQUIP a tactical map. 
                 FIRE to launch a lingering orbital strike laser at the selected location, 
                 dealing high damage-over-time to players caught in the selected area.`

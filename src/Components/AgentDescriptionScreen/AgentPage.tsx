@@ -50,5 +50,5 @@ export default function AgentPage() {
 
     const AgentNameDescRoleComponent = AgentNameDescRole(AgentNameDescRoleData);
 
-    return <div>{AgentNameDescRoleComponent}</div>;
+    return <div>{AgentAbilities()}</div>;
 }   
