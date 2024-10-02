@@ -1,5 +1,10 @@
 import { Form, useLocation } from "react-router-dom";
 import { AgentDescriptionDict } from "../../Data/AgentDescriptionData";
+import AgentNameDescRole from "./AgentNameDescRole";
+import AgentRoleIconBox from "./AgentRoleIconBox";
+import { RoleIconBoxInfo } from "./AgentRoleIconBox";
+import { NameDescRoleData } from "./AgentNameDescRole";
+import AgentAbilities from "./AgentAbilities";
 
 //getting pathname
 
@@ -12,7 +17,7 @@ function capitalize(s: string) {
     return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-export default function AgentDescription() {
+export default function AgentPage() {
     const currentLocation = useLocation().pathname;
     const splitString: String[] = currentLocation.split("/");
     //stringsplit[2] is the agent namew
@@ -20,5 +25,30 @@ export default function AgentDescription() {
     const dict = AgentDescriptionDict;
 
     const AgentInfo = dict[`${currentAgent}`]; //gets the dict of relevant agent
-    return <h1>{currentAgent}</h1>;
+
+    const boxSize = '150px';
+    //not dynamic according to this 
+
+    const bigSize = '650px';
+
+    const AgentRoleIconBoxInfo: RoleIconBoxInfo = {
+        iconUrl: AgentInfo.Role[1],
+        width: boxSize,
+        height: boxSize,
+        actualRole: AgentInfo.Role[0],
+    }
+
+    const agentBox = AgentRoleIconBox(AgentRoleIconBoxInfo);
+
+    const AgentNameDescRoleData: NameDescRoleData = {
+        width: bigSize,
+        height: bigSize,
+        Name: AgentInfo.AgentName.toUpperCase(),
+        Desc: AgentInfo.AgentDescription,
+        RoleIconBox: agentBox
+    }
+
+    const AgentNameDescRoleComponent = AgentNameDescRole(AgentNameDescRoleData);
+
+    return <div>{AgentAbilities()}</div>;
 }   

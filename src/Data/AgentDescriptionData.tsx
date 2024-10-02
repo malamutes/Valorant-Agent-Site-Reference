@@ -13,6 +13,7 @@ export interface AgentDescription {
 
 }
 
+
 /*const FruitDict: { [key: string]: Fruit } = {
     Apple: { color: "red", taste: "sweet" },
     Banana: { color: "yellow", taste: "sweet" },
@@ -25,7 +26,7 @@ const AgentDescriptionDict: { [key: string]: AgentDescription } = {
         AgentDescription: `Joining from the U.S.A., Brimstone's orbital 
         arsenal ensures his squad always has the advantage. 
         His ability to deliver utility precisely and safely makes him the unmatched boots-on-the-ground commander.`,
-        Role: ["Controller", "controllerIcon"],
+        Role: ["Controller", "https://static.valorantstats.xyz/role-icons/controller-icon.png"],
         Abilities: [
             {
                 AbilityIcon: "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data/d7e00a4ad8a1a01b2edcb9fc1193d05e4e50248f-128x128.png?auto=format&fit=crop&q=80&h=64&w=64&crop=center",
@@ -66,7 +67,7 @@ const AgentDescriptionDict: { [key: string]: AgentDescription } = {
         AgentDescription: `Hailing from the U.K., Phoenix's star power shines through in his fighting style, 
         igniting the battlefield with flash and flare. Whether he's got backup or not, he'll rush into a fight 
         on his own terms.`,
-        Role: ["Duelist", "duelistIcon"],
+        Role: ["Duelist", "https://static.valorantstats.xyz/role-icons/duelist-icon.png"],
         Abilities: [
             {
                 AbilityIcon: "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data/beb874d19c79982f0e99e858098c067d9132a95a-128x128.png?auto=format&fit=crop&q=80&h=64&w=64&crop=center",
@@ -105,7 +106,7 @@ const AgentDescriptionDict: { [key: string]: AgentDescription } = {
         AgentName: 'Sage',
         AgentDescription: `The stronghold of China, Sage creates safety for herself and her team wherever she goes. 
         Able to revive fallen friends and stave off aggressive pushes, she provides a calm center to a hellish fight.`,
-        Role: ["Sentinel", "sentinelIcon"],
+        Role: ["Sentinel", "https://static.valorantstats.xyz/role-icons/sentinel-icon.png"],
         Abilities: [
             {
                 AbilityIcon: "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data/f2931e5af58255216179b21cce81f53eab15d6ee-128x128.png?auto=format&fit=crop&q=80&h=64&w=64&crop=center",
@@ -142,7 +143,7 @@ const AgentDescriptionDict: { [key: string]: AgentDescription } = {
         AgentDescription: `Born from the eternal winter of Russia's tundra, Sova tracks, finds, and eliminates enemies 
         with ruthless efficiency and precision. His custom bow and incredible scouting abilities ensure that even if you run, 
         you cannot hide.`,
-        Role: ["Initiator", "initiatorIcon"],
+        Role: ["Initiator", "https://static.valorantstats.xyz/role-icons/initiator-icon.png"],
         Abilities: [
             {
                 AbilityIcon: "https://cmsassets.rgpub.io/sanity/images/dsfx7636/game_data/8ab5a2d03438ff0f8b2ba2d7b26c812ab6b7adbb-128x128.png?auto=format&fit=crop&q=80&h=64&w=64&crop=center",
@@ -178,6 +179,11 @@ const AgentDescriptionDict: { [key: string]: AgentDescription } = {
         ]
     }
 };
+
+//https://static.valorantstats.xyz/role-icons/controller-icon.png
+//https://static.valorantstats.xyz/role-icons/sentinel-icon.png
+//https://static.valorantstats.xyz/role-icons/duelist-icon.png
+//https://static.valorantstats.xyz/role-icons/initiator-icon.png
 
 
 export { AgentDescriptionDict };
