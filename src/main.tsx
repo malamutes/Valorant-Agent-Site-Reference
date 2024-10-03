@@ -11,7 +11,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-
+import ErrorPage from './Components/ErrorPage/ErrorDisplay.tsx'
 
 const DOMroot = ReactDOM.createRoot(document.getElementById('root')!);
 //this lets me keep a referencing to DOM root so i can use it later for router i think?
@@ -28,14 +28,15 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />, //this renders APP as its root, or initial render path like starting point
     //for navhost/navgraph
+    errorElement: <ErrorPage />
 
     //KEEP IN MIND APP IS THE ROOT, probaly need to refractor to 
-    //"agent screen" or smth later
     //error parsing later too 
   },
   {
     path: "Agents/:Agent",
     element: <AgentPage />,
+    errorElement: <ErrorPage />
   },
 
 ]);

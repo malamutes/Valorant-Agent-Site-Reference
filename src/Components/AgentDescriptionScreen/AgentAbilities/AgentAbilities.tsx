@@ -1,23 +1,36 @@
 import { CSSProperties, useEffect, useRef, useState } from "react";
-import { AgentDescriptionDict } from "../../../Data/AgentDescriptionData";
+import { AgentDescription } from "../../../Data/AgentDescriptionData";
 
 
 //do layout next and then generalise before combining with desc component
 
 const textstyle: CSSProperties = {
-    fontSize: '75px'
+    fontSize: '4rem',
+    fontWeight: '900',
 }
 
-const square3: CSSProperties = {
+const rightContainer: CSSProperties = {
     height: '50%',
     width: '100%',
+    display: "grid",
+    placeItems: 'center'
 }
 
-export default function AgentAbilities() {
-    const agent = 'Brimstone';
-    const agentDict = AgentDescriptionDict;
+export interface AgentAbilitiesInfo {
+    width: string,
+    height: string,
+    agent: string,
+    agentDict: { [key: string]: AgentDescription } //enforcing it to be specific type of object of string key as value
+    // and agent desc as value
+}
+
+export default function AgentAbilities(props: AgentAbilitiesInfo) {
+    const agent = props.agent;
+    const agentDict = props.agentDict;
+
 
     const abilityOne = agentDict[agent].Abilities[0];
+    //need to check for error anyway
     //default screen load uses ability one
 
     const [abiltityUrl, changeAbilityUrl] = useState(abilityOne.AbilityUrl);
@@ -26,12 +39,13 @@ export default function AgentAbilities() {
 
     const videoRef = useRef<HTMLVideoElement>(null);
 
+    const textPadding = '25px';
+
     useEffect(() => {
         if (videoRef.current != null) {
             videoRef.current.load();
         }
     }, [abiltityUrl]);
-
 
     function changeAbility(url: string, name: string, desc: string) {
         changeAbilityUrl(url);
@@ -39,11 +53,9 @@ export default function AgentAbilities() {
         changeAbilityDesc(desc);
     }
 
-    console.log(abiltityUrl);
-
     return (
-        <div style={{ position: 'absolute' }} className="container text-center">
-            <div style={{ position: 'absolute' }} className="row">
+        <div style={{ position: 'relative', height: props.height, width: props.width }} className="myContainer">
+            <div style={{ position: 'absolute', display: 'flex', alignItems: 'center' }} className="row">
                 <div className="col">  {/* left side */}
 
                     <div className="row">
@@ -53,7 +65,7 @@ export default function AgentAbilities() {
                     <div className="row">
 
                         {agentDict[agent].Abilities.map((ability, index) => (
-                            <div className="col" key={index}>
+                            <div style={{ padding: '20px' }} className="col-12" key={index}>
                                 <img onClick={() => changeAbility(ability.AbilityUrl, ability.AbilityName, ability.AbilityDescription)}
                                     src={ability.AbilityIcon}
                                 />
@@ -63,18 +75,17 @@ export default function AgentAbilities() {
                     </div>
                 </div>
 
-                <div className="col">
-                    <div style={square3} className="row">
+                <div style={rightContainer} className="col">
+                    <div className="row">
                         <video ref={videoRef} autoPlay loop muted>
                             <source src={abiltityUrl} type="video/mp4"></source>
                         </video>
                     </div>
-
-                    <div className="row">
+                    <div style={{ paddingTop: textPadding, fontWeight: '900', fontSize: '1.75rem' }} className="row">
                         {abilityName}
                     </div>
 
-                    <div className="row">
+                    <div style={{ paddingTop: textPadding, fontWeight: '500', fontSize: '1rem' }} className="row">
                         {abilityDesc}
                     </div>
 

@@ -2,7 +2,8 @@
   /* set max width here */
   max-width: 1500px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0rem;
+  /*paddint at top of screen */
   text-align: center;
   background-color: rgba(255, 0, 0, 0)
 }

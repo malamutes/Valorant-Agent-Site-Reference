@@ -13,15 +13,18 @@ const name: React.CSSProperties = {
     fontSize: '4rem',
     fontStyle: 'italic',
     padding: 0,
-    paddingBottom: '10px'
+    paddingBottom: '10px',
+    paddingTop: '25%' //shifting it down, padding is inside, margin is top, so theres basically hollow sapce above 
+    //name right now
 };
 
 const desc: React.CSSProperties = {
     //backgroundColor: 'green',
     fontWeight: '500',
-    fontSize: '1.275rem',
+    fontSize: '1.05rem',
     textAlign: 'start',
     paddingBottom: '35px',
+    width: '85%'
 };
 
 
@@ -41,7 +44,7 @@ export default function AgentNameDescRole(props: NameDescRoleData) {
     };
 
     return (
-        <div style={containerStyle} className="container">
+        <div style={containerStyle} className="myContainer">
             <div style={name} className="row">
                 {props.Name}
             </div>
