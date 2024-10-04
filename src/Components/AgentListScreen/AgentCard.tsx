@@ -34,7 +34,9 @@ function NameCard({ width, height, backgroundColor, name }: nameCardDimensions) 
         justifyContent: 'center',
         alignItems: 'center',
         position: 'absolute',
-        bottom: '0%'
+        top: '100%',
+        fontWeight: '700',
+        fontSize: '1.25em'
         //positioning relative to the image lmfaoooo make sure
         //name card stays below img card
         //the name card isnt blocking it, something else is 
@@ -69,15 +71,12 @@ function AgentCard(params: AgentCardParams) {
         <div style={{
             width: params.width, height: params.height,
             display: 'flex', flexDirection: 'column',
-            margin: '12.5px', position: 'relative'
+            margin: '2em', position: 'relative',
         }}>
-
             <ImgCard width={params.width} height={params.imgCardHeight} src={params.imageSrc} alt={params.imgAlt} />
             <NameCard width={params.width} height={params.nameCardHeight} backgroundColor={params.nameCardColor} name={params.nameCardName}></NameCard>\
             <a style={{ position: 'absolute', width: params.width, height: params.height, zIndex: 1000 }}
                 href={`/Agents/${[params.nameCardName]}`}></a>
-            {/* relative before for anchor pushed it down underneath text
-            so absolute just makes it fill the space of its parent container */}
 
         </div>
 
