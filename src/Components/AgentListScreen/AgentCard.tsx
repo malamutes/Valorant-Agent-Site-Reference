@@ -2,84 +2,64 @@ import React, { useState } from 'react';
 import './AgentCard.css';
 
 interface imgDimensions {
-    width: string;
-    height: string;
     src: string;
     alt: string;
+    className: string
 }
 
 interface nameCardDimensions {
-    width: string;
-    height: string;
-    backgroundColor: string;
     name: string;
+    className: string
 }
 
-function ImgCard({ width, height, src, alt }: imgDimensions) {
+function ImgCard({ src, alt, className }: imgDimensions) {
     const imgStyle: React.CSSProperties = {
-        position: 'absolute',
-        width,
-        height,
+        position: 'relative',
+        width: '100%',
+        height: 'auto',
     };
 
-    return <img style={imgStyle} src={src} alt={alt} />;
+    return <img style={imgStyle} src={src} alt={alt} className={className} />;
 }
 
-function NameCard({ width, height, backgroundColor, name }: nameCardDimensions) {
+function NameCard({ name, className }: nameCardDimensions) {
     const nameCardStyle: React.CSSProperties = {
-        width,
-        height,
-        backgroundColor,
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'center', //for the text
         alignItems: 'center',
-        position: 'absolute',
-        top: '100%',
-        fontWeight: '700',
-        fontSize: '1.25em'
-        //positioning relative to the image lmfaoooo make sure
-        //name card stays below img card
-        //the name card isnt blocking it, something else is 
+
+        width: '100%',
+        aspectRatio: 6.5,
+        backgroundColor: 'gray',
+
+        position: 'relative', //siblings are positioned next to each other only when they are
+        //both relatively positioned, so normal doc flow, if one is absolute its taken out of doc flow
+
+        fontWeight: '800',
+        fontSize: '1rem',
+        overflowWrap: 'break-word',
+        wordBreak: 'break-all'
     };
 
-    return <div style={nameCardStyle}>{name}</div>
+    return <div style={nameCardStyle} className={className}><span style={{ padding: '0.5rem' }}>{name}</span></div>
 }
 
-interface AgentCardParams {
-    width: string,
-    height: string,
-    imgCardHeight: string,
-    nameCardHeight: string,
+export interface AgentCardParams {
     imageSrc: string,
     imgAlt: string,
-    nameCardColor: string,
     nameCardName: string
 }
 
 function AgentCard(params: AgentCardParams) {
-    /*
-    const [test, setTest] = useState("");
 
-    function handleClick() {
-        setTest(params.nameCardName)
-    }*/
-    //not ready to get htis part done yet, but now i know state saving is async, need to keep that in mind
-    //rn the updated state can only be retrieved on the second render (i.e second clik i think?) of the iamge
-    //i cant click the button at the name card
+    const sibling = 'child'
 
-    return (<div className='agent-card' >
-        <div style={{
-            width: params.width, height: params.height,
-            display: 'flex', flexDirection: 'column',
-            margin: '2em', position: 'relative',
-        }}>
-            <ImgCard width={params.width} height={params.imgCardHeight} src={params.imageSrc} alt={params.imgAlt} />
-            <NameCard width={params.width} height={params.nameCardHeight} backgroundColor={params.nameCardColor} name={params.nameCardName}></NameCard>\
-            <a style={{ position: 'absolute', width: params.width, height: params.height, zIndex: 1000 }}
-                href={`/Agents/${[params.nameCardName]}`}></a>
 
-        </div>
-
+    return (<div className='myAgentCardContainer' >
+        <ImgCard src={params.imageSrc} alt={params.imgAlt} className={sibling} />
+        <NameCard name={params.nameCardName} className={sibling}></NameCard>
+        <a style={{ position: 'absolute', width: '100%', height: '100%', zIndex: 1000 }}
+            href={`/Agents/${[params.nameCardName]}`}></a>
     </div>);
 }
 

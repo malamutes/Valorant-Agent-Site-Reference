@@ -11,13 +11,12 @@ export interface AgentCardList {
 
 export default function AgentGrid(props: AgentCardList) {
     const agentCardList = props.agentList;
-    const cols = props.columns;
-    const colClass = `col-xxl-3 col-lg-4 col-md-6 col-sm-12 col-sx-12`; //adjusting how many columns based on viewport size
+    const colClass = `col-lg-3 col-6`; //adjusting how many columns based on viewport size
 
     //cols is 3
 
     return (
-        <div style={{ backgroundColor: 'red', position: 'absolute', width: '68%', height: 'fit=content' }} className='myContainer' id="hehexd">
+        <div className='myContainer' id="hehexd">
             <div className='row'>
                 {agentCardList.map((agentcard, index) =>
                     (<div className={colClass} key={index}> {agentcard} </div>))}

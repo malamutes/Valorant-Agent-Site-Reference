@@ -24,13 +24,13 @@ const desc: React.CSSProperties = {
     fontSize: '1.05rem',
     textAlign: 'start',
     paddingBottom: '35px',
-    width: '85%'
+    width: '40%',
+    wordBreak: 'normal'
+
 };
 
 
 export interface NameDescRoleData {
-    width: string,
-    height: string
     Name: string,
     Desc: string,
     RoleIconBox: React.ReactNode
@@ -38,14 +38,9 @@ export interface NameDescRoleData {
 
 
 export default function AgentNameDescRole(props: NameDescRoleData) {
-    const containerStyle: React.CSSProperties = {
-        height: props.height,
-        width: props.width,
-    };
-
     return (
-        <div style={containerStyle} className="myContainer">
-            <div style={name} className="row">
+        <div className="myDescContainer">
+            <div style={{ fontStyle: 'italic' }} className="row textStyles">
                 {props.Name}
             </div>
 

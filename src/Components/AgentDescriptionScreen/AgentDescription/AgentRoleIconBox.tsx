@@ -6,6 +6,8 @@ const redOutline: React.CSSProperties = {
     fontWeight: '200',
     display: 'grid',
     placeItems: 'center',
+    width: '10%',
+    aspectRatio: 1
 };
 
 const graySquare: React.CSSProperties = {
@@ -31,30 +33,23 @@ const imgRoleStyle: React.CSSProperties = {
 
 export interface RoleIconBoxInfo {
     iconUrl: string,
-    height: string,
-    width: string,
     actualRole: string
 }
 
 
 export default function AgentRoleIconBox(props: RoleIconBoxInfo) {
-    const combineRedOutlineStyle: React.CSSProperties = {
-        ...redOutline, //spread oeprator
-        height: props.height,
-        width: props.width
-    }
-
     return (
-        <div style={combineRedOutlineStyle}>
+        <div style={redOutline}>
             <div style={graySquare}>
                 <div className="container">
                     <div className="row">
                         <img src={props.iconUrl} alt="Controller" style={imgRoleStyle} />
-                        <span style={{ position: 'absolute', top: '57.5%', fontSize: '70%' }}>ROLE</span>
-                        <span style={{ position: 'absolute', top: '72.5%', fontSize: '70%', color: 'red', }}>{props.actualRole.toUpperCase()}</span>
+                        <span style={{ position: 'absolute', top: '57.5%', fontSize: '60%' }}>ROLE</span>
+                        <span style={{ position: 'absolute', top: '72.5%', fontSize: '60%', color: 'red', }}>{props.actualRole.toUpperCase()}</span>
                     </div>
                 </div>
             </div>
         </div>
     )
 }
+

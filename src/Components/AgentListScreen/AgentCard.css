@@ -1,6 +1,11 @@
-.agent-card {
+.myAgentCardContainer {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* padding between each card */
+    margin: 1.3rem auto;
+    /*margin equal on both side if possible*/
+    background-color: aqua;
+    width: 90%;
+    height: fit-content
 }

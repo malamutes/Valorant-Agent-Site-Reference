@@ -1,7 +1,7 @@
 #root {
   /* set max width here */
-  max-width: 1500px;
-  margin: 0 auto;
+  margin: 0;
+  /* was initiall 0 auto, auto ensures left and right has even px space, but its only pushed right for me*/
   padding: 0rem;
   /*paddint at top of screen */
   text-align: center;
@@ -10,4 +10,36 @@
 
 .App {
   background-color: black;
+}
+
+.myAppContainer {
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  /*margin equal on both side if possible*/
+  padding: 0;
+  background-color: red;
+}
+
+@media (min-width: 100px) {
+  .myAppContainer {
+    width: 85%;
+    height: 150vh;
+  }
+}
+
+@media (min-width: 596px) {
+  .myAppContainer {
+    width: 90%;
+    height: 125vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .myAppContainer {
+    width: 80%;
+    height: 100vh;
+    /* lets use viewport height */
+  }
 }

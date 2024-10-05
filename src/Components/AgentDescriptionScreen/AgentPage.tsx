@@ -33,24 +33,15 @@ export default function AgentPage() {
 
     const AgentInfo = dict[`${currentAgent}`]; //gets the dict of relevant agent
 
-    const boxSize = '150px';
-    //not dynamic according to this 
-
-    const bigSizeW = '650px';
-    const bigSizeH = '800px';
 
     const AgentRoleIconBoxInfo: RoleIconBoxInfo = {
         iconUrl: AgentInfo.Role[1],
-        width: boxSize,
-        height: boxSize,
         actualRole: AgentInfo.Role[0],
     }
 
     const agentBox = AgentRoleIconBox(AgentRoleIconBoxInfo);
 
     const AgentNameDescRoleData: NameDescRoleData = {
-        width: bigSizeW,
-        height: bigSizeH,
         Name: AgentInfo.AgentName.toUpperCase(),
         Desc: AgentInfo.AgentDescription,
         RoleIconBox: agentBox
@@ -59,29 +50,16 @@ export default function AgentPage() {
     const AgentNameDescRoleComponent = AgentNameDescRole(AgentNameDescRoleData);
 
     const CurrentAgentAbilitiesInfo: AgentAbilitiesInfo = {
-        height: "600px",
-        width: "1500px",
         agent: currentAgent,
         agentDict: dict,
     }
 
     const CurrentABilities = AgentAbilities(CurrentAgentAbilitiesInfo)
 
-    return (
-        <div>
-            <div style={{ display: 'grid', justifyItems: 'center' }} className="row">
-                {/* i dont understand how justify items doesnt affect all other children inside */}
-                <div style={{ background: 'linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%)', position: 'absolute', backgroundColor: "black", width: '100%', height: bigSizeH, zIndex: 0 }} ></div>
-                <img style={{ position: 'absolute', height: bigSizeH, width: 'auto', left: '40%' }} src={AgentImage} alt="Image" />
-                <div style={{ zIndex: 1 }} >{AgentNameDescRoleComponent}</div>
-            </div>
-
-            <div style={{ display: "grid", placeItems: 'center', paddingTop: '50px' }} className="row">
-                {/* its because parent of currentabilties doesnt have enforced pixels so its pushuing
-                it out of bounds hence why its not affected  */}
-                <img style={{ position: 'absolute', height: '50%', width: 'auto', filter: 'opacity(5%)' }} src={dict[currentAgent].Role[1]} alt="RoleIcon" />
-                <div>{CurrentABilities}</div>
-            </div>
-        </div>
-    );
+    return <div style={{
+        position: 'relative',
+        backgroundColor: 'transparent', width: '70%', left: '15%',
+    }}>
+        {AgentNameDescRoleComponent}
+    </div>
 }   

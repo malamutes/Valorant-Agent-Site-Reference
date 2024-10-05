@@ -1,27 +1,19 @@
 import { CSSProperties, useEffect, useRef, useState } from "react";
 import { AgentDescription } from "../../../Data/AgentDescriptionData";
+import './AgentAbilities.css'
 
+//video is being pushed to the side, need to investigate why
 
-//do layout next and then generalise before combining with desc component
-
-const textstyle: CSSProperties = {
-    fontSize: '4rem',
-    fontWeight: '900',
-}
 
 const rightContainer: CSSProperties = {
-    height: '50%',
-    width: '100%',
+
     display: "grid",
-    placeItems: 'center'
+    placeItems: 'center',
 }
 
 export interface AgentAbilitiesInfo {
-    width: string,
-    height: string,
     agent: string,
-    agentDict: { [key: string]: AgentDescription } //enforcing it to be specific type of object of string key as value
-    // and agent desc as value
+    agentDict: { [key: string]: AgentDescription }
 }
 
 export default function AgentAbilities(props: AgentAbilitiesInfo) {
@@ -30,7 +22,6 @@ export default function AgentAbilities(props: AgentAbilitiesInfo) {
 
 
     const abilityOne = agentDict[agent].Abilities[0];
-    //need to check for error anyway
     //default screen load uses ability one
 
     const [abiltityUrl, changeAbilityUrl] = useState(abilityOne.AbilityUrl);
@@ -39,7 +30,7 @@ export default function AgentAbilities(props: AgentAbilitiesInfo) {
 
     const videoRef = useRef<HTMLVideoElement>(null);
 
-    const textPadding = '25px';
+    const textPadding = '1.75em';
 
     useEffect(() => {
         if (videoRef.current != null) {
@@ -54,19 +45,19 @@ export default function AgentAbilities(props: AgentAbilitiesInfo) {
     }
 
     return (
-        <div style={{ position: 'relative', height: props.height, width: props.width }} className="myContainer">
+        <div className="myAgentAbilitiesContainer">
             <div style={{ position: 'absolute', display: 'flex', alignItems: 'center' }} className="row">
                 <div className="col">  {/* left side */}
 
                     <div className="row">
-                        <span style={textstyle}>SPECIAL ABILITIES</span>
+                        <span className="textStyles">SPECIAL ABILITIES</span>
                     </div>
 
                     <div className="row">
 
                         {agentDict[agent].Abilities.map((ability, index) => (
-                            <div style={{ padding: '20px' }} className="col-12" key={index}>
-                                <img onClick={() => changeAbility(ability.AbilityUrl, ability.AbilityName, ability.AbilityDescription)}
+                            <div style={{ padding: '1.5em 0', justifyContent: 'center' }} className="row g-0" key={index}>
+                                <img style={{ position: 'relative', width: '10%', height: 'auto' }} onClick={() => changeAbility(ability.AbilityUrl, ability.AbilityName, ability.AbilityDescription)}
                                     src={ability.AbilityIcon}
                                 />
                             </div>
@@ -76,16 +67,16 @@ export default function AgentAbilities(props: AgentAbilitiesInfo) {
                 </div>
 
                 <div style={rightContainer} className="col">
-                    <div className="row">
+                    <div className="row videoStyle">
                         <video ref={videoRef} autoPlay loop muted>
                             <source src={abiltityUrl} type="video/mp4"></source>
                         </video>
                     </div>
-                    <div style={{ paddingTop: textPadding, fontWeight: '900', fontSize: '1.75rem' }} className="row">
+                    <div style={{ paddingTop: textPadding, fontWeight: '900', fontSize: '1.5em' }} className="row">
                         {abilityName}
                     </div>
 
-                    <div style={{ paddingTop: textPadding, fontWeight: '500', fontSize: '1rem' }} className="row">
+                    <div style={{ paddingTop: textPadding, fontWeight: '500', fontSize: '0.8em', wordBreak: 'normal' }} className="row">
                         {abilityDesc}
                     </div>
 
@@ -94,6 +85,8 @@ export default function AgentAbilities(props: AgentAbilitiesInfo) {
         </div >
     )
 }
+
+
 
 //() => changeText(desc)} the ()=> prevents changeText from being called infinitely, and delays it until onclick
 //just hard code abilities for now since the order won't change anyway, itll make
@@ -121,6 +114,6 @@ export default function AgentAbilities(props: AgentAbilitiesInfo) {
         someotherarray[i] = somfunc(iterable[i])
     return some otherarray
 
-    //function() (stuff here) is implicit return apparently
+    //function() (stuff here) is lambda
 
 */

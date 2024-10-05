@@ -6,6 +6,8 @@ import { AgentInfoList } from './Data/AgentCardData';
 import { AgentCardList } from './Components/AgentListScreen/AgentGrid';
 import makeAgentCardList from './Components/AgentListScreen/MakeAgentCardList';
 
+import { AgentCardParams } from './Components/AgentListScreen/AgentCard';
+
 import LearningUI from './Components/LearningAdaptiveUI/LearningUI';
 
 //max width is set in app.css but ened to fix padding around later
@@ -13,16 +15,9 @@ import LearningUI from './Components/LearningAdaptiveUI/LearningUI';
 //need to fix f12 layout distortion
 
 export default function App() {
-
-  const width = 19.063; //conntrol the width here, need to find a quarter of grid size 
-  const textSize = width * 0.125;
-  const AgentDisplayData = [`${width}rem`, `${width * 822 / 616}rem`, `${width * 822 / 616}rem`, `${textSize}rem`, 'gray'];
-
-  //aspect ratio is 0.75
-  //for dispaly data always ==> width, height, imgcardheight, namecardheight, namecardcolor 
   const infoList = AgentInfoList;
   const cardList: AgentCardList = {
-    agentList: makeAgentCardList(AgentDisplayData, infoList),
+    agentList: makeAgentCardList(infoList),
     columns: 4,
   };
 
@@ -31,13 +26,27 @@ export default function App() {
 
   console.log(`Viewport width: ${viewportWidth}px, height: ${viewportHeight}px`);
 
-  return <div> {LearningUI()} </div>
+  /*const fuckthis: AgentCardParams = {
+    imageSrc: "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/51e62f3c74356a7501d06feba42ac643133257d7-616x822.png?auto=format&fit=fill&q=80&w=616",
+    imgAlt: "brimstone",
+    nameCardName: "BRIMSTONE"
+  }*/
+
+  return (<>
+    <div >
+      {AgentGrid(cardList)}
+    </div>
+  </>);
 }
 
-/*    <>
-      <div style={{
-        display: 'flex', flexDirection: 'column', alignItems: 'center',
-      }}>
-        {AgentGrid(cardList)}
-      </div>
-    </> */
+
+
+/*
+
+
+*/
+
+/* 
+<div className='myAppContainer'>
+    {AgentCard(fuckthis)}
+  </div>*/
