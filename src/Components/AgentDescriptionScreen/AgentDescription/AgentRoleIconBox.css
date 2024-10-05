@@ -1,0 +1,28 @@
+.myAgentRoleIconBox {
+    position: relative;
+    border: 1.75px solid red;
+    display: grid;
+    place-items: center;
+    width: 150px;
+    /* dno why this isnt doing anything */
+    aspect-ratio: 1;
+
+}
+
+.graySquare {
+    position: absolute;
+    font-Weight: 200;
+    height: 80%;
+    width: 80%;
+    background-Color: rgb(50, 50, 50);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textStyleRoleIcon {
+    position: relative;
+    font-size: 0.85rem;
+    padding-bottom: 0.25em;
+    top: 55%
+}

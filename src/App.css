@@ -4,7 +4,6 @@
   /* was initiall 0 auto, auto ensures left and right has even px space, but its only pushed right for me*/
   padding: 0rem;
   /*paddint at top of screen */
-  text-align: center;
   background-color: rgba(255, 0, 0, 0)
 }
 

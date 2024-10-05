@@ -56,10 +56,12 @@ export default function AgentPage() {
 
     const CurrentABilities = AgentAbilities(CurrentAgentAbilitiesInfo)
 
-    return <div style={{
-        position: 'relative',
-        backgroundColor: 'transparent', width: '70%', left: '15%',
-    }}>
-        {AgentNameDescRoleComponent}
-    </div>
+    return (
+        <>
+            <div style={{ position: 'absolute', width: '1800px', left: 0, right: 0, margin: '0 auto', backgroundColor: 'green' }}>asdsad</div>
+            <div className="myAgentAbilitiesContainer">
+                {AgentNameDescRoleComponent}
+                {CurrentABilities}
+            </div>
+        </>)
 }   

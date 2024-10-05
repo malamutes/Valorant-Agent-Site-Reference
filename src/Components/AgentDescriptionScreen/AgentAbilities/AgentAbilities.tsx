@@ -45,44 +45,41 @@ export default function AgentAbilities(props: AgentAbilitiesInfo) {
     }
 
     return (
-        <div className="myAgentAbilitiesContainer">
-            <div style={{ position: 'absolute', display: 'flex', alignItems: 'center' }} className="row">
-                <div className="col">  {/* left side */}
-
-                    <div className="row">
-                        <span className="textStyles">SPECIAL ABILITIES</span>
-                    </div>
-
-                    <div className="row">
-
-                        {agentDict[agent].Abilities.map((ability, index) => (
-                            <div style={{ padding: '1.5em 0', justifyContent: 'center' }} className="row g-0" key={index}>
-                                <img style={{ position: 'relative', width: '10%', height: 'auto' }} onClick={() => changeAbility(ability.AbilityUrl, ability.AbilityName, ability.AbilityDescription)}
-                                    src={ability.AbilityIcon}
-                                />
-                            </div>
-                        ))}
-
-                    </div>
+        <div className="row">
+            <div className="col">  {/* left side */}
+                <div className="row">
+                    <span className="textStyles">SPECIAL ABILITIES</span>
                 </div>
 
-                <div style={rightContainer} className="col">
-                    <div className="row videoStyle">
-                        <video ref={videoRef} autoPlay loop muted>
-                            <source src={abiltityUrl} type="video/mp4"></source>
-                        </video>
-                    </div>
-                    <div style={{ paddingTop: textPadding, fontWeight: '900', fontSize: '1.5em' }} className="row">
-                        {abilityName}
-                    </div>
+                <div className="row">
 
-                    <div style={{ paddingTop: textPadding, fontWeight: '500', fontSize: '0.8em', wordBreak: 'normal' }} className="row">
-                        {abilityDesc}
-                    </div>
+                    {agentDict[agent].Abilities.map((ability, index) => (
+                        <div style={{ padding: '1.5em 0', justifyContent: 'center' }} className="row g-0" key={index}>
+                            <img style={{ position: 'relative', width: '7.5%', height: 'auto' }} onClick={() => changeAbility(ability.AbilityUrl, ability.AbilityName, ability.AbilityDescription)}
+                                src={ability.AbilityIcon}
+                            />
+                        </div>
+                    ))}
 
                 </div>
             </div>
-        </div >
+
+            <div style={rightContainer} className="col">
+                <div className="row videoStyle">
+                    <video ref={videoRef} autoPlay loop muted>
+                        <source src={abiltityUrl} type="video/mp4"></source>
+                    </video>
+                </div>
+                <div style={{ paddingTop: textPadding, fontWeight: '900', fontSize: '1.5em' }} className="row">
+                    {abilityName}
+                </div>
+
+                <div style={{ paddingLeft: '25px', paddingRight: '25px', paddingTop: textPadding, fontWeight: '600', fontSize: '1em', wordBreak: 'normal' }} className="row">
+                    {abilityDesc}
+                </div>
+
+            </div>
+        </div>
     )
 }
 

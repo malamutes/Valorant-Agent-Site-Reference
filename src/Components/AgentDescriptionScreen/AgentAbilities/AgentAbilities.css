@@ -2,57 +2,74 @@
     position: relative;
     max-width: 1600px;
     margin: 0 auto;
+
+    background-color: blueviolet;
     /*margin equal on both side if possible*/
-    background-color: red;
+
 }
 
 @media (min-width: 100px) {
     .myAgentAbilitiesContainer {
-        width: 75%;
+        width: 95%;
         height: fit-content;
     }
 }
 
-@media (min-width: 992px) {
-    .myAgentAbilitiesContainer {
-        width: 85%;
-        height: fit-content;
-    }
-}
 
 .textStyles {
     font-Size: 4em;
-    font-Weight: 900
+    font-Weight: 900;
+    text-align: center;
 }
 
 @media (min-width: 100px) {
     .textStyles {
-        font-Size: 1.5em;
+        font-Size: 1.75em;
         font-Weight: 900
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 270px) {
     .textStyles {
-        font-Size: 4em;
+        font-Size: 3em;
         font-Weight: 900
     }
 }
+
+@media (min-width: 300px) {
+    .videoStyle {
+        font-Size: 3.5em;
+        font-Weight: 900
+    }
+}
+
 
 .videoStyle {
     position: relative;
-    width: 650px;
+    width: 90%;
+
     height: auto;
 }
 
 @media (min-width: 100px) {
     .videoStyle {
-        width: 225px;
+        width: 90%;
+        min-width: 150px;
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 400px) {
     .videoStyle {
-        width: 650px;
+        width: 90%;
+        min-width: 350px;
     }
 }
+
+
+.myAgentNameDescRole {
+    position: relative;
+    height: 950px;
+    width: 100%;
+}
+
+/* need to adaptively increase height based on vp size, name adaptive, desc adapt*/
