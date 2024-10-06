@@ -1,15 +1,10 @@
-/*const test0: React.CSSProperties = {
-    height: '100vh',
-    width: '100vh'
-}; basically the height will good but best to be able to set it anyway, for the text inside i can proably
-hard code the styles like below first*/
-
+import './AgentNameDescRole.css'
 
 const desc: React.CSSProperties = {
     //backgroundColor: 'green',
     position: 'relative',
     fontWeight: '500',
-    fontSize: '1.05rem',
+    fontSize: '1rem',
     textAlign: 'start',
     paddingBottom: '35px',
     width: '32.5%',
@@ -26,13 +21,10 @@ export interface NameDescRoleData {
 
 export default function AgentNameDescRole(props: NameDescRoleData) {
 
-    const leftSpace = '5%'
-    const topSpace = '25%'
-
     return (
         <div className="myAgentNameDescRole">
-            <div style={{ position: 'relative', left: leftSpace, top: topSpace }}>
-                <div style={{ fontStyle: 'italic', fontSize: '4.5em' }}>
+            <div className="nameDescContainer">
+                <div className="AgentName">
                     {props.Name}
                 </div>
 

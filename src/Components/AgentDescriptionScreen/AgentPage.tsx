@@ -6,6 +6,7 @@ import { RoleIconBoxInfo } from "./AgentDescription/AgentRoleIconBox";
 import { NameDescRoleData } from "./AgentDescription/AgentNameDescRole";
 import AgentAbilities, { AgentAbilitiesInfo } from "./AgentAbilities/AgentAbilities";
 import { AgentImageLinks } from "../../Data/AgentImageLinkData";
+import './AgentPage.css'
 
 //getting pathname
 
@@ -58,7 +59,9 @@ export default function AgentPage() {
 
     return (
         <>
-            <div style={{ position: 'absolute', width: '1800px', left: 0, right: 0, margin: '0 auto', backgroundColor: 'green' }}>asdsad</div>
+            <div className="AgentImageContainer">
+                <img className="AgentImage" src={AgentImage} alt="Agent"></img>
+            </div>
             <div className="myAgentAbilitiesContainer">
                 {AgentNameDescRoleComponent}
                 {CurrentABilities}

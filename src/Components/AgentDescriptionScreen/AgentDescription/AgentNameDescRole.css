@@ -1,0 +1,45 @@
+.AgentName {
+    position: relative;
+    font-Style: italic;
+    font-size: calc(1rem + 2.5vw);
+    max-width: 100%;
+    font-weight: 800;
+}
+
+.myAgentNameDescRole {
+    position: relative;
+}
+
+@media (min-width: 100px) {
+    .myAgentNameDescRole {
+        max-height: 1000px;
+    }
+}
+
+@media (min-width: 400px) {
+    .myAgentNameDescRole {
+        max-height: 700px;
+    }
+}
+
+@media (min-width: 992px) {
+    .myAgentNameDescRole {
+        max-height: 1000px;
+    }
+}
+
+.nameDescContainer {
+    position: relative;
+}
+
+@media (min-width: 100px) {
+    .nameDescContainer {
+        top: 0%
+    }
+}
+
+@media (min-width: 992px) {
+    .nameDescContainer {
+        top: 25%
+    }
+}
